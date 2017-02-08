@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		56F435371E4B5E1800E4D7F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F435361E4B5E1800E4D7F8 /* AppDelegate.swift */; };
+		56F435391E4B5E1800E4D7F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F435381E4B5E1800E4D7F8 /* ViewController.swift */; };
+		56F4353C1E4B5E1800E4D7F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F4353A1E4B5E1800E4D7F8 /* Main.storyboard */; };
+		56F4353F1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56F4353D1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodeld */; };
+		56F435411E4B5E1800E4D7F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F435401E4B5E1800E4D7F8 /* Assets.xcassets */; };
+		56F435441E4B5E1800E4D7F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F435421E4B5E1800E4D7F8 /* LaunchScreen.storyboard */; };
+		56F4354F1E4B5E1900E4D7F8 /* CapGemini_WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4354E1E4B5E1900E4D7F8 /* CapGemini_WeatherTests.swift */; };
+		56F4355A1E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F435591E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56F4354B1E4B5E1900E4D7F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56F4352B1E4B5E1800E4D7F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56F435321E4B5E1800E4D7F8;
+			remoteInfo = CapGemini_Weather;
+		};
+		56F435561E4B5E1900E4D7F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56F4352B1E4B5E1800E4D7F8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56F435321E4B5E1800E4D7F8;
+			remoteInfo = CapGemini_Weather;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		56F435331E4B5E1800E4D7F8 /* CapGemini_Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapGemini_Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F435361E4B5E1800E4D7F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		56F435381E4B5E1800E4D7F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		56F4353B1E4B5E1800E4D7F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		56F4353E1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CapGemini_Weather.xcdatamodel; sourceTree = "<group>"; };
+		56F435401E4B5E1800E4D7F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56F435431E4B5E1800E4D7F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		56F435451E4B5E1800E4D7F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56F4354A1E4B5E1900E4D7F8 /* CapGemini_WeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapGemini_WeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F4354E1E4B5E1900E4D7F8 /* CapGemini_WeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapGemini_WeatherTests.swift; sourceTree = "<group>"; };
+		56F435501E4B5E1900E4D7F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56F435551E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapGemini_WeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F435591E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapGemini_WeatherUITests.swift; sourceTree = "<group>"; };
+		56F4355B1E4B5E1900E4D7F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56F435301E4B5E1800E4D7F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F435471E4B5E1900E4D7F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F435521E4B5E1900E4D7F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		56F4352A1E4B5E1800E4D7F8 = {
+			isa = PBXGroup;
+			children = (
+				56F435351E4B5E1800E4D7F8 /* CapGemini_Weather */,
+				56F4354D1E4B5E1900E4D7F8 /* CapGemini_WeatherTests */,
+				56F435581E4B5E1900E4D7F8 /* CapGemini_WeatherUITests */,
+				56F435341E4B5E1800E4D7F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		56F435341E4B5E1800E4D7F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56F435331E4B5E1800E4D7F8 /* CapGemini_Weather.app */,
+				56F4354A1E4B5E1900E4D7F8 /* CapGemini_WeatherTests.xctest */,
+				56F435551E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56F435351E4B5E1800E4D7F8 /* CapGemini_Weather */ = {
+			isa = PBXGroup;
+			children = (
+				56F435361E4B5E1800E4D7F8 /* AppDelegate.swift */,
+				56F435381E4B5E1800E4D7F8 /* ViewController.swift */,
+				56F4353A1E4B5E1800E4D7F8 /* Main.storyboard */,
+				56F435401E4B5E1800E4D7F8 /* Assets.xcassets */,
+				56F435421E4B5E1800E4D7F8 /* LaunchScreen.storyboard */,
+				56F435451E4B5E1800E4D7F8 /* Info.plist */,
+				56F4353D1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodeld */,
+			);
+			path = CapGemini_Weather;
+			sourceTree = "<group>";
+		};
+		56F4354D1E4B5E1900E4D7F8 /* CapGemini_WeatherTests */ = {
+			isa = PBXGroup;
+			children = (
+				56F4354E1E4B5E1900E4D7F8 /* CapGemini_WeatherTests.swift */,
+				56F435501E4B5E1900E4D7F8 /* Info.plist */,
+			);
+			path = CapGemini_WeatherTests;
+			sourceTree = "<group>";
+		};
+		56F435581E4B5E1900E4D7F8 /* CapGemini_WeatherUITests */ = {
+			isa = PBXGroup;
+			children = (
+				56F435591E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.swift */,
+				56F4355B1E4B5E1900E4D7F8 /* Info.plist */,
+			);
+			path = CapGemini_WeatherUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56F435321E4B5E1800E4D7F8 /* CapGemini_Weather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56F4355E1E4B5E1900E4D7F8 /* Build configuration list for PBXNativeTarget "CapGemini_Weather" */;
+			buildPhases = (
+				56F4352F1E4B5E1800E4D7F8 /* Sources */,
+				56F435301E4B5E1800E4D7F8 /* Frameworks */,
+				56F435311E4B5E1800E4D7F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CapGemini_Weather;
+			productName = CapGemini_Weather;
+			productReference = 56F435331E4B5E1800E4D7F8 /* CapGemini_Weather.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56F435491E4B5E1900E4D7F8 /* CapGemini_WeatherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56F435611E4B5E1900E4D7F8 /* Build configuration list for PBXNativeTarget "CapGemini_WeatherTests" */;
+			buildPhases = (
+				56F435461E4B5E1900E4D7F8 /* Sources */,
+				56F435471E4B5E1900E4D7F8 /* Frameworks */,
+				56F435481E4B5E1900E4D7F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56F4354C1E4B5E1900E4D7F8 /* PBXTargetDependency */,
+			);
+			name = CapGemini_WeatherTests;
+			productName = CapGemini_WeatherTests;
+			productReference = 56F4354A1E4B5E1900E4D7F8 /* CapGemini_WeatherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		56F435541E4B5E1900E4D7F8 /* CapGemini_WeatherUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56F435641E4B5E1900E4D7F8 /* Build configuration list for PBXNativeTarget "CapGemini_WeatherUITests" */;
+			buildPhases = (
+				56F435511E4B5E1900E4D7F8 /* Sources */,
+				56F435521E4B5E1900E4D7F8 /* Frameworks */,
+				56F435531E4B5E1900E4D7F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56F435571E4B5E1900E4D7F8 /* PBXTargetDependency */,
+			);
+			name = CapGemini_WeatherUITests;
+			productName = CapGemini_WeatherUITests;
+			productReference = 56F435551E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		56F4352B1E4B5E1800E4D7F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Charles;
+				TargetAttributes = {
+					56F435321E4B5E1800E4D7F8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = FNQD9V3N5Z;
+						ProvisioningStyle = Automatic;
+					};
+					56F435491E4B5E1900E4D7F8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = FNQD9V3N5Z;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 56F435321E4B5E1800E4D7F8;
+					};
+					56F435541E4B5E1900E4D7F8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = FNQD9V3N5Z;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 56F435321E4B5E1800E4D7F8;
+					};
+				};
+			};
+			buildConfigurationList = 56F4352E1E4B5E1800E4D7F8 /* Build configuration list for PBXProject "CapGemini_Weather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 56F4352A1E4B5E1800E4D7F8;
+			productRefGroup = 56F435341E4B5E1800E4D7F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56F435321E4B5E1800E4D7F8 /* CapGemini_Weather */,
+				56F435491E4B5E1900E4D7F8 /* CapGemini_WeatherTests */,
+				56F435541E4B5E1900E4D7F8 /* CapGemini_WeatherUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56F435311E4B5E1800E4D7F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F435441E4B5E1800E4D7F8 /* LaunchScreen.storyboard in Resources */,
+				56F435411E4B5E1800E4D7F8 /* Assets.xcassets in Resources */,
+				56F4353C1E4B5E1800E4D7F8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F435481E4B5E1900E4D7F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F435531E4B5E1900E4D7F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56F4352F1E4B5E1800E4D7F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F4353F1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodeld in Sources */,
+				56F435391E4B5E1800E4D7F8 /* ViewController.swift in Sources */,
+				56F435371E4B5E1800E4D7F8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F435461E4B5E1900E4D7F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F4354F1E4B5E1900E4D7F8 /* CapGemini_WeatherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56F435511E4B5E1900E4D7F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F4355A1E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56F4354C1E4B5E1900E4D7F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56F435321E4B5E1800E4D7F8 /* CapGemini_Weather */;
+			targetProxy = 56F4354B1E4B5E1900E4D7F8 /* PBXContainerItemProxy */;
+		};
+		56F435571E4B5E1900E4D7F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56F435321E4B5E1800E4D7F8 /* CapGemini_Weather */;
+			targetProxy = 56F435561E4B5E1900E4D7F8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		56F4353A1E4B5E1800E4D7F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56F4353B1E4B5E1800E4D7F8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		56F435421E4B5E1800E4D7F8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56F435431E4B5E1800E4D7F8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		56F4355C1E4B5E1900E4D7F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		56F4355D1E4B5E1900E4D7F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		56F4355F1E4B5E1900E4D7F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				INFOPLIST_FILE = CapGemini_Weather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-Weather";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		56F435601E4B5E1900E4D7F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				INFOPLIST_FILE = CapGemini_Weather/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-Weather";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		56F435621E4B5E1900E4D7F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				INFOPLIST_FILE = CapGemini_WeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-WeatherTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CapGemini_Weather.app/CapGemini_Weather";
+			};
+			name = Debug;
+		};
+		56F435631E4B5E1900E4D7F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				INFOPLIST_FILE = CapGemini_WeatherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-WeatherTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CapGemini_Weather.app/CapGemini_Weather";
+			};
+			name = Release;
+		};
+		56F435651E4B5E1900E4D7F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				INFOPLIST_FILE = CapGemini_WeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-WeatherUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CapGemini_Weather;
+			};
+			name = Debug;
+		};
+		56F435661E4B5E1900E4D7F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				INFOPLIST_FILE = CapGemini_WeatherUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-WeatherUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = CapGemini_Weather;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56F4352E1E4B5E1800E4D7F8 /* Build configuration list for PBXProject "CapGemini_Weather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56F4355C1E4B5E1900E4D7F8 /* Debug */,
+				56F4355D1E4B5E1900E4D7F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56F4355E1E4B5E1900E4D7F8 /* Build configuration list for PBXNativeTarget "CapGemini_Weather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56F4355F1E4B5E1900E4D7F8 /* Debug */,
+				56F435601E4B5E1900E4D7F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		56F435611E4B5E1900E4D7F8 /* Build configuration list for PBXNativeTarget "CapGemini_WeatherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56F435621E4B5E1900E4D7F8 /* Debug */,
+				56F435631E4B5E1900E4D7F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		56F435641E4B5E1900E4D7F8 /* Build configuration list for PBXNativeTarget "CapGemini_WeatherUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56F435651E4B5E1900E4D7F8 /* Debug */,
+				56F435661E4B5E1900E4D7F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		56F4353D1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				56F4353E1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodel */,
+			);
+			currentVersion = 56F4353E1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodel */;
+			path = CapGemini_Weather.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 56F4352B1E4B5E1800E4D7F8 /* Project object */;
+}
