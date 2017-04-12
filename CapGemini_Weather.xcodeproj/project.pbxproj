@@ -7,17 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		564C62501E4F3AA800B62548 /* pressure.png in Resources */ = {isa = PBXBuildFile; fileRef = 564C624F1E4F3AA800B62548 /* pressure.png */; };
+		567DD6051E61817D00F671D0 /* icon167.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD6021E61817D00F671D0 /* icon167.png */; };
+		567DD6061E61817D00F671D0 /* icon152.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD6031E61817D00F671D0 /* icon152.png */; };
+		567DD6071E61817D00F671D0 /* icon40.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD6041E61817D00F671D0 /* icon40.png */; };
+		567DD60D1E6182C500F671D0 /* icon76.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD60A1E6182C500F671D0 /* icon76.png */; };
+		567DD60E1E6182C500F671D0 /* icon60.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD60B1E6182C500F671D0 /* icon60.png */; };
+		567DD60F1E6182C500F671D0 /* icon20.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD60C1E6182C500F671D0 /* icon20.png */; };
+		567DD6111E61851700F671D0 /* icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD6101E61851700F671D0 /* icon29.png */; };
+		569A4C9A1E94DC8B001C8069 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB86987C1E57893E006274E9 /* Charts.framework */; };
+		569A4C9B1E94DC8B001C8069 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB86987C1E57893E006274E9 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		569A4CA01E94EB0C001C8069 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 569A4C9F1E94EB0C001C8069 /* launch.png */; };
+		569A4CA31E9E681E001C8069 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569A4CA21E9E681E001C8069 /* GraphCell.swift */; };
+		56BC1C1A1E840CD900561AFE /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 56BC1C191E840CD900561AFE /* refresh.png */; };
+		56BC1C1D1E84166F00561AFE /* UIViewRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC1C1C1E84166F00561AFE /* UIViewRotation.swift */; };
+		56BC1C1F1E8418D100561AFE /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC1C1E1E8418D100561AFE /* Timer.swift */; };
+		56EF0CEE1E55EF5200ADFF06 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF0CED1E55EF5200ADFF06 /* DisplayViewController.swift */; };
+		56EF0CF31E55F91200ADFF06 /* suggestion.png in Resources */ = {isa = PBXBuildFile; fileRef = 56EF0CF11E55F91200ADFF06 /* suggestion.png */; };
+		56EF0CF81E55F94200ADFF06 /* temperature.png in Resources */ = {isa = PBXBuildFile; fileRef = 56EF0CF51E55F94200ADFF06 /* temperature.png */; };
+		56EF0CF91E55F94200ADFF06 /* information.png in Resources */ = {isa = PBXBuildFile; fileRef = 56EF0CF61E55F94200ADFF06 /* information.png */; };
+		56EF0CFA1E55F94200ADFF06 /* humidity.png in Resources */ = {isa = PBXBuildFile; fileRef = 56EF0CF71E55F94200ADFF06 /* humidity.png */; };
+		56EF0CFC1E55FDC800ADFF06 /* bugreport.png in Resources */ = {isa = PBXBuildFile; fileRef = 56EF0CFB1E55FDC800ADFF06 /* bugreport.png */; };
 		56F435371E4B5E1800E4D7F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F435361E4B5E1800E4D7F8 /* AppDelegate.swift */; };
-		56F435391E4B5E1800E4D7F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F435381E4B5E1800E4D7F8 /* ViewController.swift */; };
+		56F435391E4B5E1800E4D7F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F435381E4B5E1800E4D7F8 /* MainViewController.swift */; };
 		56F4353C1E4B5E1800E4D7F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F4353A1E4B5E1800E4D7F8 /* Main.storyboard */; };
-		56F4353F1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56F4353D1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodeld */; };
 		56F435411E4B5E1800E4D7F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F435401E4B5E1800E4D7F8 /* Assets.xcassets */; };
 		56F435441E4B5E1800E4D7F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56F435421E4B5E1800E4D7F8 /* LaunchScreen.storyboard */; };
 		56F4354F1E4B5E1900E4D7F8 /* CapGemini_WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F4354E1E4B5E1900E4D7F8 /* CapGemini_WeatherTests.swift */; };
 		56F4355A1E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F435591E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.swift */; };
+		56F435681E4B696000E4D7F8 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F435671E4B696000E4D7F8 /* CustomBackground.swift */; };
+		56F435771E4B8B6100E4D7F8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F435761E4B8B6100E4D7F8 /* AboutViewController.swift */; };
+		56F4357D1E4CCC2E00E4D7F8 /* refreshCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56F4357C1E4CCC2E00E4D7F8 /* refreshCustom.xib */; };
+		56F4357E1E4CCC2E00E4D7F8 /* refreshCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56F4357C1E4CCC2E00E4D7F8 /* refreshCustom.xib */; };
+		56F4357F1E4CCC2E00E4D7F8 /* refreshCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56F4357C1E4CCC2E00E4D7F8 /* refreshCustom.xib */; };
+		CB84F56E1E4D0380003F6C12 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F435701E4B740A00E4D7F8 /* QuartzCore.framework */; };
+		CB84F56F1E4D0386003F6C12 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F4356E1E4B740400E4D7F8 /* Security.framework */; };
+		CB86E3351E50C619004A2983 /* center.png in Resources */ = {isa = PBXBuildFile; fileRef = CB86E3341E50C619004A2983 /* center.png */; };
+		CB86E33C1E50F91A004A2983 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86E33B1E50F91A004A2983 /* CircularTransition.swift */; };
+		CBC1294F1E4B9C1800FC0C56 /* HelpIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC129471E4B9C1800FC0C56 /* HelpIcon.png */; };
+		CBC129501E4B9C1800FC0C56 /* icon58.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC129481E4B9C1800FC0C56 /* icon58.png */; };
+		CBC129511E4B9C1800FC0C56 /* icon80.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC129491E4B9C1800FC0C56 /* icon80.png */; };
+		CBC129521E4B9C1800FC0C56 /* icon87.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC1294A1E4B9C1800FC0C56 /* icon87.png */; };
+		CBC129531E4B9C1800FC0C56 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC1294B1E4B9C1800FC0C56 /* icon120.png */; };
+		CBC129541E4B9C1800FC0C56 /* icon180.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC1294C1E4B9C1800FC0C56 /* icon180.png */; };
+		CBC129561E4B9C1800FC0C56 /* StopIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC1294E1E4B9C1800FC0C56 /* StopIcon.png */; };
+		CBCD621C1E4F6B1800C55D7D /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCD621B1E4F6B1800C55D7D /* Annotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		569A4C9C1E94DC8B001C8069 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB8698751E57893E006274E9 /* charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 06165F231D8110E600722320;
+			remoteInfo = Charts;
+		};
 		56F4354B1E4B5E1900E4D7F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 56F4352B1E4B5E1800E4D7F8 /* Project object */;
@@ -32,14 +76,60 @@
 			remoteGlobalIDString = 56F435321E4B5E1800E4D7F8;
 			remoteInfo = CapGemini_Weather;
 		};
+		CB86987B1E57893E006274E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB8698751E57893E006274E9 /* charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F241D8110E600722320;
+			remoteInfo = Charts;
+		};
+		CB86987F1E57893E006274E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB8698751E57893E006274E9 /* charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06165F2E1D8110E600722320;
+			remoteInfo = ChartsTests;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		569A4C9E1E94DC8B001C8069 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				569A4C9B1E94DC8B001C8069 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		564C624F1E4F3AA800B62548 /* pressure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pressure.png; path = Fichiers/pressure.png; sourceTree = "<group>"; };
+		567DD6021E61817D00F671D0 /* icon167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon167.png; path = Fichiers/icon167.png; sourceTree = "<group>"; };
+		567DD6031E61817D00F671D0 /* icon152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon152.png; path = Fichiers/icon152.png; sourceTree = "<group>"; };
+		567DD6041E61817D00F671D0 /* icon40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon40.png; path = Fichiers/icon40.png; sourceTree = "<group>"; };
+		567DD60A1E6182C500F671D0 /* icon76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon76.png; path = Fichiers/icon76.png; sourceTree = "<group>"; };
+		567DD60B1E6182C500F671D0 /* icon60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon60.png; path = Fichiers/icon60.png; sourceTree = "<group>"; };
+		567DD60C1E6182C500F671D0 /* icon20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon20.png; path = Fichiers/icon20.png; sourceTree = "<group>"; };
+		567DD6101E61851700F671D0 /* icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon29.png; path = Fichiers/icon29.png; sourceTree = "<group>"; };
+		569A4C9F1E94EB0C001C8069 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch.png; path = Fichiers/launch.png; sourceTree = SOURCE_ROOT; };
+		569A4CA21E9E681E001C8069 /* GraphCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
+		56BC1C191E840CD900561AFE /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = Fichiers/refresh.png; sourceTree = "<group>"; };
+		56BC1C1C1E84166F00561AFE /* UIViewRotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewRotation.swift; sourceTree = "<group>"; };
+		56BC1C1E1E8418D100561AFE /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		56EF0CED1E55EF5200ADFF06 /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		56EF0CF11E55F91200ADFF06 /* suggestion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suggestion.png; path = Fichiers/suggestion.png; sourceTree = SOURCE_ROOT; };
+		56EF0CF51E55F94200ADFF06 /* temperature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = temperature.png; path = Fichiers/temperature.png; sourceTree = "<group>"; };
+		56EF0CF61E55F94200ADFF06 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = information.png; path = Fichiers/information.png; sourceTree = "<group>"; };
+		56EF0CF71E55F94200ADFF06 /* humidity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity.png; path = Fichiers/humidity.png; sourceTree = "<group>"; };
+		56EF0CFB1E55FDC800ADFF06 /* bugreport.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bugreport.png; path = Fichiers/bugreport.png; sourceTree = "<group>"; };
 		56F435331E4B5E1800E4D7F8 /* CapGemini_Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapGemini_Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F435361E4B5E1800E4D7F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		56F435381E4B5E1800E4D7F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		56F435381E4B5E1800E4D7F8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		56F4353B1E4B5E1800E4D7F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		56F4353E1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CapGemini_Weather.xcdatamodel; sourceTree = "<group>"; };
 		56F435401E4B5E1800E4D7F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56F435431E4B5E1800E4D7F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56F435451E4B5E1800E4D7F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +139,22 @@
 		56F435551E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapGemini_WeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56F435591E4B5E1900E4D7F8 /* CapGemini_WeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapGemini_WeatherUITests.swift; sourceTree = "<group>"; };
 		56F4355B1E4B5E1900E4D7F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56F435671E4B696000E4D7F8 /* CustomBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
+		56F4356E1E4B740400E4D7F8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		56F435701E4B740A00E4D7F8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		56F435761E4B8B6100E4D7F8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		56F4357C1E4CCC2E00E4D7F8 /* refreshCustom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = refreshCustom.xib; sourceTree = "<group>"; };
+		CB8698751E57893E006274E9 /* charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = charts.xcodeproj; sourceTree = SOURCE_ROOT; };
+		CB86E3341E50C619004A2983 /* center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = center.png; path = Fichiers/center.png; sourceTree = "<group>"; };
+		CB86E33B1E50F91A004A2983 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		CBC129471E4B9C1800FC0C56 /* HelpIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HelpIcon.png; path = Fichiers/HelpIcon.png; sourceTree = "<group>"; };
+		CBC129481E4B9C1800FC0C56 /* icon58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon58.png; path = Fichiers/icon58.png; sourceTree = "<group>"; };
+		CBC129491E4B9C1800FC0C56 /* icon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon80.png; path = Fichiers/icon80.png; sourceTree = "<group>"; };
+		CBC1294A1E4B9C1800FC0C56 /* icon87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon87.png; path = Fichiers/icon87.png; sourceTree = "<group>"; };
+		CBC1294B1E4B9C1800FC0C56 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon120.png; path = Fichiers/icon120.png; sourceTree = "<group>"; };
+		CBC1294C1E4B9C1800FC0C56 /* icon180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon180.png; path = Fichiers/icon180.png; sourceTree = "<group>"; };
+		CBC1294E1E4B9C1800FC0C56 /* StopIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StopIcon.png; path = Fichiers/StopIcon.png; sourceTree = "<group>"; };
+		CBCD621B1E4F6B1800C55D7D /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +162,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				569A4C9A1E94DC8B001C8069 /* Charts.framework in Frameworks */,
+				CB84F56F1E4D0386003F6C12 /* Security.framework in Frameworks */,
+				CB84F56E1E4D0380003F6C12 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +185,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		567DD6121E61852800F671D0 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				567DD6021E61817D00F671D0 /* icon167.png */,
+				567DD6031E61817D00F671D0 /* icon152.png */,
+				567DD6101E61851700F671D0 /* icon29.png */,
+				567DD6041E61817D00F671D0 /* icon40.png */,
+				567DD60A1E6182C500F671D0 /* icon76.png */,
+				567DD60B1E6182C500F671D0 /* icon60.png */,
+				567DD60C1E6182C500F671D0 /* icon20.png */,
+				CBC129481E4B9C1800FC0C56 /* icon58.png */,
+				CBC129491E4B9C1800FC0C56 /* icon80.png */,
+				CBC1294A1E4B9C1800FC0C56 /* icon87.png */,
+				CBC1294B1E4B9C1800FC0C56 /* icon120.png */,
+				CBC1294C1E4B9C1800FC0C56 /* icon180.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		56BC1C1B1E84164F00561AFE /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				CBCD621B1E4F6B1800C55D7D /* Annotation.swift */,
+				569A4CA21E9E681E001C8069 /* GraphCell.swift */,
+				56BC1C1C1E84166F00561AFE /* UIViewRotation.swift */,
+				56BC1C1E1E8418D100561AFE /* Timer.swift */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
 		56F4352A1E4B5E1800E4D7F8 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +222,8 @@
 				56F4354D1E4B5E1900E4D7F8 /* CapGemini_WeatherTests */,
 				56F435581E4B5E1900E4D7F8 /* CapGemini_WeatherUITests */,
 				56F435341E4B5E1800E4D7F8 /* Products */,
+				56F4356B1E4B6B6200E4D7F8 /* Additional Files */,
+				56F4356D1E4B740400E4D7F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +240,19 @@
 		56F435351E4B5E1800E4D7F8 /* CapGemini_Weather */ = {
 			isa = PBXGroup;
 			children = (
+				CB8698751E57893E006274E9 /* charts.xcodeproj */,
 				56F435361E4B5E1800E4D7F8 /* AppDelegate.swift */,
-				56F435381E4B5E1800E4D7F8 /* ViewController.swift */,
+				56EF0CED1E55EF5200ADFF06 /* DisplayViewController.swift */,
+				56F435381E4B5E1800E4D7F8 /* MainViewController.swift */,
+				CB86E33A1E50F45E004A2983 /* Transitions */,
+				56BC1C1B1E84164F00561AFE /* Custom Views */,
+				56F435671E4B696000E4D7F8 /* CustomBackground.swift */,
+				56F435761E4B8B6100E4D7F8 /* AboutViewController.swift */,
 				56F4353A1E4B5E1800E4D7F8 /* Main.storyboard */,
+				56F4357C1E4CCC2E00E4D7F8 /* refreshCustom.xib */,
 				56F435401E4B5E1800E4D7F8 /* Assets.xcassets */,
 				56F435421E4B5E1800E4D7F8 /* LaunchScreen.storyboard */,
 				56F435451E4B5E1800E4D7F8 /* Info.plist */,
-				56F4353D1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodeld */,
 			);
 			path = CapGemini_Weather;
 			sourceTree = "<group>";
@@ -128,6 +275,67 @@
 			path = CapGemini_WeatherUITests;
 			sourceTree = "<group>";
 		};
+		56F4356B1E4B6B6200E4D7F8 /* Additional Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBC129571E4B9C2500FC0C56 /* Files */,
+			);
+			name = "Additional Files";
+			sourceTree = "<group>";
+		};
+		56F4356D1E4B740400E4D7F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56F435701E4B740A00E4D7F8 /* QuartzCore.framework */,
+				56F4356E1E4B740400E4D7F8 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB8698761E57893E006274E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB86987C1E57893E006274E9 /* Charts.framework */,
+				CB8698801E57893E006274E9 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB86E33A1E50F45E004A2983 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				CB86E33B1E50F91A004A2983 /* CircularTransition.swift */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
+		CBC129571E4B9C2500FC0C56 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBC129581E4B9C3700FC0C56 /* Images */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
+		CBC129581E4B9C3700FC0C56 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				567DD6121E61852800F671D0 /* Icons */,
+				56EF0CF11E55F91200ADFF06 /* suggestion.png */,
+				569A4C9F1E94EB0C001C8069 /* launch.png */,
+				56EF0CF51E55F94200ADFF06 /* temperature.png */,
+				56EF0CF61E55F94200ADFF06 /* information.png */,
+				56EF0CFB1E55FDC800ADFF06 /* bugreport.png */,
+				56EF0CF71E55F94200ADFF06 /* humidity.png */,
+				56BC1C191E840CD900561AFE /* refresh.png */,
+				CB86E3341E50C619004A2983 /* center.png */,
+				564C624F1E4F3AA800B62548 /* pressure.png */,
+				CBC129471E4B9C1800FC0C56 /* HelpIcon.png */,
+				CBC1294E1E4B9C1800FC0C56 /* StopIcon.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,10 +346,12 @@
 				56F4352F1E4B5E1800E4D7F8 /* Sources */,
 				56F435301E4B5E1800E4D7F8 /* Frameworks */,
 				56F435311E4B5E1800E4D7F8 /* Resources */,
+				569A4C9E1E94DC8B001C8069 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				569A4C9D1E94DC8B001C8069 /* PBXTargetDependency */,
 			);
 			name = CapGemini_Weather;
 			productName = CapGemini_Weather;
@@ -196,12 +406,12 @@
 				TargetAttributes = {
 					56F435321E4B5E1800E4D7F8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = FNQD9V3N5Z;
+						DevelopmentTeam = 5X6JZ7XTSL;
 						ProvisioningStyle = Automatic;
 					};
 					56F435491E4B5E1900E4D7F8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = FNQD9V3N5Z;
+						DevelopmentTeam = 5X6JZ7XTSL;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 56F435321E4B5E1800E4D7F8;
 					};
@@ -224,6 +434,12 @@
 			mainGroup = 56F4352A1E4B5E1800E4D7F8;
 			productRefGroup = 56F435341E4B5E1800E4D7F8 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CB8698761E57893E006274E9 /* Products */;
+					ProjectRef = CB8698751E57893E006274E9 /* charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				56F435321E4B5E1800E4D7F8 /* CapGemini_Weather */,
@@ -233,14 +449,55 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		CB86987C1E57893E006274E9 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = CB86987B1E57893E006274E9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CB8698801E57893E006274E9 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = CB86987F1E57893E006274E9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		56F435311E4B5E1800E4D7F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56EF0CF91E55F94200ADFF06 /* information.png in Resources */,
+				567DD60D1E6182C500F671D0 /* icon76.png in Resources */,
+				56F4357D1E4CCC2E00E4D7F8 /* refreshCustom.xib in Resources */,
+				CBC129521E4B9C1800FC0C56 /* icon87.png in Resources */,
+				567DD6061E61817D00F671D0 /* icon152.png in Resources */,
+				CB86E3351E50C619004A2983 /* center.png in Resources */,
+				567DD6051E61817D00F671D0 /* icon167.png in Resources */,
+				56EF0CFC1E55FDC800ADFF06 /* bugreport.png in Resources */,
+				567DD60F1E6182C500F671D0 /* icon20.png in Resources */,
 				56F435441E4B5E1800E4D7F8 /* LaunchScreen.storyboard in Resources */,
+				CBC129561E4B9C1800FC0C56 /* StopIcon.png in Resources */,
+				CBC129531E4B9C1800FC0C56 /* icon120.png in Resources */,
+				56EF0CFA1E55F94200ADFF06 /* humidity.png in Resources */,
+				56BC1C1A1E840CD900561AFE /* refresh.png in Resources */,
+				CBC1294F1E4B9C1800FC0C56 /* HelpIcon.png in Resources */,
+				CBC129511E4B9C1800FC0C56 /* icon80.png in Resources */,
+				567DD6071E61817D00F671D0 /* icon40.png in Resources */,
+				564C62501E4F3AA800B62548 /* pressure.png in Resources */,
 				56F435411E4B5E1800E4D7F8 /* Assets.xcassets in Resources */,
 				56F4353C1E4B5E1800E4D7F8 /* Main.storyboard in Resources */,
+				CBC129501E4B9C1800FC0C56 /* icon58.png in Resources */,
+				569A4CA01E94EB0C001C8069 /* launch.png in Resources */,
+				567DD60E1E6182C500F671D0 /* icon60.png in Resources */,
+				CBC129541E4B9C1800FC0C56 /* icon180.png in Resources */,
+				56EF0CF81E55F94200ADFF06 /* temperature.png in Resources */,
+				56EF0CF31E55F91200ADFF06 /* suggestion.png in Resources */,
+				567DD6111E61851700F671D0 /* icon29.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F4357E1E4CCC2E00E4D7F8 /* refreshCustom.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +513,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F4357F1E4CCC2E00E4D7F8 /* refreshCustom.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,8 +524,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56F4353F1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodeld in Sources */,
-				56F435391E4B5E1800E4D7F8 /* ViewController.swift in Sources */,
+				56BC1C1D1E84166F00561AFE /* UIViewRotation.swift in Sources */,
+				56F435681E4B696000E4D7F8 /* CustomBackground.swift in Sources */,
+				56F435771E4B8B6100E4D7F8 /* AboutViewController.swift in Sources */,
+				CB86E33C1E50F91A004A2983 /* CircularTransition.swift in Sources */,
+				56EF0CEE1E55EF5200ADFF06 /* DisplayViewController.swift in Sources */,
+				56F435391E4B5E1800E4D7F8 /* MainViewController.swift in Sources */,
+				56BC1C1F1E8418D100561AFE /* Timer.swift in Sources */,
+				CBCD621C1E4F6B1800C55D7D /* Annotation.swift in Sources */,
+				569A4CA31E9E681E001C8069 /* GraphCell.swift in Sources */,
 				56F435371E4B5E1800E4D7F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +556,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		569A4C9D1E94DC8B001C8069 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 569A4C9C1E94DC8B001C8069 /* PBXContainerItemProxy */;
+		};
 		56F4354C1E4B5E1900E4D7F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 56F435321E4B5E1800E4D7F8 /* CapGemini_Weather */;
@@ -418,9 +689,15 @@
 		56F4355F1E4B5E1900E4D7F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				DEVELOPMENT_TEAM = 5X6JZ7XTSL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CapGemini_Weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,9 +708,15 @@
 		56F435601E4B5E1900E4D7F8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				DEVELOPMENT_TEAM = 5X6JZ7XTSL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CapGemini_Weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-Weather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,7 +729,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				DEVELOPMENT_TEAM = 5X6JZ7XTSL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CapGemini_WeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-WeatherTests";
@@ -461,7 +748,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				DEVELOPMENT_TEAM = 5X6JZ7XTSL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CapGemini_WeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-WeatherTests";
@@ -476,6 +767,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CapGemini_WeatherUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-WeatherUITests";
@@ -490,6 +785,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = FNQD9V3N5Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CapGemini_WeatherUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CharlesAubert.CapGemini-WeatherUITests";
@@ -518,6 +817,7 @@
 				56F435601E4B5E1900E4D7F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56F435611E4B5E1900E4D7F8 /* Build configuration list for PBXNativeTarget "CapGemini_WeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +826,7 @@
 				56F435631E4B5E1900E4D7F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56F435641E4B5E1900E4D7F8 /* Build configuration list for PBXNativeTarget "CapGemini_WeatherUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,21 +835,9 @@
 				56F435661E4B5E1900E4D7F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		56F4353D1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				56F4353E1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodel */,
-			);
-			currentVersion = 56F4353E1E4B5E1800E4D7F8 /* CapGemini_Weather.xcdatamodel */;
-			path = CapGemini_Weather.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 56F4352B1E4B5E1800E4D7F8 /* Project object */;
 }
