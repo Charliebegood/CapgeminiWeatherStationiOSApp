@@ -23,6 +23,7 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     let sensor_types = ["Temperature", "Pressure", "Hygrometry", "Snow"]
     let link_sensor = "http://tech-toulouse.ovh:8000/sensor/"
     var data = [(String, [Double])]()
+    var arrayDataEntries = [[ChartDataEntry]]()
     var station = [String]()
     var load = UIVisualEffectView()
     var activityIndicator = UIActivityIndicatorView()
@@ -30,6 +31,7 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     var last_date = String()
     var current_date_link = String()
     var last_date_link = String()
+    var cache:NSCache<AnyObject, AnyObject>!
     @IBOutlet weak var backgroundView: BackgroundView!
     //# MARK: - END of variables
 
@@ -52,7 +54,7 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         let past_date = calendar.date(byAdding: .day, value: -7, to: date)
 
         
-
+        self.cache = NSCache()
         myFormatter.dateFormat = "MM/dd/yyyy"
         current_date = myFormatter.string(from: date)
         myFormatter.dateFormat = "yyyyMMdd-HHmmss"
@@ -100,6 +102,19 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         activityIndicator.stopAnimating()
         if (station[0] != "Error") {
             data = get_all_sensors(id: Int(station[4]))
+            for tmp in data {
+                if (tmp.1.count > 10) {
+                    var dataEntries : [ChartDataEntry] = []
+                    for i in 0...tmp.1.count - 1 {
+                        let dataEntry = ChartDataEntry(x: Double(i), y: tmp.1[i])
+                        dataEntries.append(dataEntry)
+                    }
+                    arrayDataEntries.append(dataEntries)
+                } else {
+                    let dataEntries : [ChartDataEntry] = []
+                    arrayDataEntries.append(dataEntries)
+                }
+            }
         } else {
             data = [("Error", [0.0])]
         }
@@ -166,6 +181,7 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         }
         else {
+            res = [0.0]
             print("Error : the url was broken.")
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -200,20 +216,16 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         let current = cell.contentView.viewWithTag(6) as! UILabel
         current.text = current_date
         let lineChart = cell.contentView.viewWithTag(3) as! LineChartView
-        var dataEntries: [ChartDataEntry] = []
+        var charDataSet = LineChartDataSet()
 
-        let data_array = self.data[indexPath.row].1
-        if (data_array.count > 10) {
-            for i in 0...data_array.count - 1 {
-                let dataEntry = ChartDataEntry(x: Double(i), y: data_array[i])
-                dataEntries.append(dataEntry)
-            }
+        if data[indexPath.row].1.count > 10 {
+            charDataSet = LineChartDataSet(values: arrayDataEntries[indexPath.row], label: self.type[indexPath.row])
+            let chartData: LineChartData?
+            charDataSet.circleRadius = 0.5
+            chartData = LineChartData(dataSet: charDataSet)
+            lineChart.data = chartData
         }
-        let chartDataSet = LineChartDataSet(values: dataEntries, label: self.type[indexPath.row])
-        let chartData: LineChartData?
-        chartDataSet.circleRadius = 0.5
-        chartData = LineChartData(dataSet: chartDataSet)
-        lineChart.data = chartData
+        
         lineChart.chartDescription = nil
         lineChart.xAxis.labelPosition = .bottom
         lineChart.rightAxis.enabled = false
@@ -231,41 +243,13 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //Function that counts the number of cells to be displayed
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = 0
-        
-        
-        for tuple in data {
-            if tuple.1.count > 10 {
-                count += 1
-            }
-        }
-        return count
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return  300;
     }
 
-//    fileprivate func _configureCell(_ cell: GlitchyTableCell, atIndexPath indexPath: IndexPath)
-//    {
-//        cell.queue.cancelAllOperations()
-//        
-//        let operation: BlockOperation = BlockOperation()
-//        operation.addExecutionBlock { [weak operation] () -> Void in
-//            
-//            let text = self.model.textForIndexPath(indexPath)
-//            
-//            DispatchQueue.main.sync(execute: { [weak operation] () -> Void in
-//                
-//                if let operation = operation, operation.isCancelled { return }
-//                
-//                cell.textLabel?.text = text
-//            })
-//        }
-//        
-//        cell.queue.addOperation(operation)
-//    }
-    
     //Animates table when view appears and when reloading table data.
     func animateTable(){
         tableView.reloadData()
