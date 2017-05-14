@@ -23,8 +23,23 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     let sensor_types = ["Temperature", "Pressure", "Hygrometry", "Snow"]
     let link_sensor = "http://tech-toulouse.ovh:8000/sensor/"
     let cellReuseIdendifier = "graphCell"
-    var data = [(String, [Double])]()
     var arrayDataEntries = [[ChartDataEntry]]()
+    struct valueObject {
+        var value = Double()
+        var date = String()
+        var error = Bool()
+        
+        
+        init(value: Double, error: Bool) {
+            self.value = value
+            self.error = error
+        }
+    }
+    struct sensor {
+        var type = String()
+        var values = [valueObject]()
+    }
+    var sensors = [sensor]()
     var station = [String]()
     var load = UIVisualEffectView()
     var activityIndicator = UIActivityIndicatorView()
@@ -100,12 +115,13 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidAppear(_ animated: Bool) {
         activityIndicator.stopAnimating()
         if (station[0] != "Error") {
-            data = get_all_sensors(id: Int(station[4]))
-            for tmp in data {
-                if (tmp.1.count > 10) {
+            sensors = get_all_sensors(id: Int(station[4]))
+            print(sensors)
+            for tmp in sensors {
+                if (tmp.values.count > 10) {
                     var dataEntries : [ChartDataEntry] = []
-                    for i in 0...tmp.1.count - 1 {
-                        let dataEntry = ChartDataEntry(x: Double(i), y: tmp.1[i])
+                    for i in 0...tmp.values.count - 1 {
+                        let dataEntry = ChartDataEntry(x: Double(i), y: tmp.values[i].value)
                         dataEntries.append(dataEntry)
                     }
                     arrayDataEntries.append(dataEntries)
@@ -114,9 +130,10 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
                     arrayDataEntries.append(dataEntries)
                 }
             }
-        } else {
-            data = [("Error", [0.0])]
         }
+//        } else {
+//            data = [("Error", [0.0])]
+//        }
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             //Set x position what ever you want
             self.load.alpha = 0
@@ -133,9 +150,10 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         self.dismiss(animated: true, completion: nil)
     }
 
-    func get_sensor_values(type: String, id: Int?) -> [Double] {
+    func get_sensor_values(type: String, id: Int?) -> [valueObject] {
         var full_url = link_sensor + "0" + "type"
-        var res = [Double]()
+        var res = [valueObject]()
+        var tmpValue = valueObject(value: 0.0, error: true)
         
         
         if let unwraped_id = id{
@@ -152,12 +170,17 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
                                 for i in 0...parsedData.count - 1 {
                                     if let sensor = parsedData[i] as? NSDictionary {
                                         if let value = sensor["value"] as? String {
-                                            res.append(Double(value)!)
+                                            tmpValue.value = Double(value)!
                                         }
+                                        if let date = sensor["datetime"] as? String {
+                                            tmpValue.date = date
+                                        }
+                                        tmpValue.error = false
+                                        res.append(tmpValue)
                                     }
                                 }
                             } else {
-                                res = [0.0]
+                                res.append(valueObject(value: 0.0, error: true))
                             }
                         } else {
                             print("Error : invalid response.")
@@ -180,23 +203,24 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         }
         else {
-            res = [0.0]
+            res.append(valueObject(value: 0.0, error: true))
             print("Error : the url was broken.")
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         return (res)
     }
     
-    func get_all_sensors(id : Int?) -> [(String, [Double])] {
-        var sensors = [(String, [Double])]()
-        
+    func get_all_sensors(id : Int?) -> [sensor] {
+        var tmpSensors = [sensor]()
+    
         
         for i in 0...type.count - 1 {
-            var sensor = [0.0]
-            sensor = get_sensor_values(type: type[i], id: id)
-            sensors.append((type[i], sensor))
+            var tmpSensor = sensor()
+            tmpSensor.values = get_sensor_values(type: type[i], id: id)
+            tmpSensor.type = type[i]
+            tmpSensors.append(tmpSensor)
         }
-        return (sensors)
+        return (tmpSensors)
     }
     
     
@@ -205,15 +229,27 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //# MARK: - Table settings
     //Filling the table view with content from the app and the data base
+    func formatDate(date: String) -> [Character] {
+        var res = [Character]()
+        var i = 0
+        
+        while (date[i] != "T" && date[i] != "A") {
+            res.append(date[i])
+            i += 1
+        }
+        return (res)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var charDataSet = LineChartDataSet()
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdendifier)! as! GraphCell
         
         
+        cell.dateLeftLabel.text = String(formatDate(date: sensors[indexPath.row].values[0].date))
         cell.typeLabel.text = self.sensor_types[indexPath.row]
-        if data[indexPath.row].1.count > 10 {
-            cell.dateLeftLabel.text = last_date
-            cell.dateRightLabel.text = current_date
+        if sensors[indexPath.row].values.count > 10 {
+            cell.dateLeftLabel.text = String(formatDate(date: sensors[indexPath.row].values[0].date))
+            cell.dateRightLabel.text = String(formatDate(date: sensors[indexPath.row].values[sensors[indexPath.row].values.count - 1].date))
             charDataSet = LineChartDataSet(values: arrayDataEntries[indexPath.row], label: self.type[indexPath.row])
             let chartData: LineChartData?
             charDataSet.circleRadius = 0.5
@@ -223,6 +259,8 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.dateLeftLabel.text = ""
             cell.dateRightLabel.text = ""
         }
+        cell.dateLeftLabel.text = String(formatDate(date: sensors[indexPath.row].values[0].date))
+        cell.dateRightLabel.text = String(formatDate(date: sensors[indexPath.row].values[sensors[indexPath.row].values.count - 1].date))
         cell.lineChartView?.chartDescription = nil
         cell.lineChartView?.xAxis.labelPosition = .bottom
         cell.lineChartView?.rightAxis.enabled = false
@@ -240,7 +278,7 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //Function that counts the number of cells to be displayed
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return sensors.count
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
