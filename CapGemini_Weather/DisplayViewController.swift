@@ -23,8 +23,23 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     let sensor_types = ["Temperature", "Pressure", "Hygrometry", "Snow"]
     let link_sensor = "http://tech-toulouse.ovh:8000/sensor/"
     let cellReuseIdendifier = "graphCell"
-    var data = [(String, [Double])]()
     var arrayDataEntries = [[ChartDataEntry]]()
+    struct valueObject {
+        var value = Double()
+        var date = String()
+        var error = Bool()
+        
+        
+        init(value: Double, error: Bool) {
+            self.value = value
+            self.error = error
+        }
+    }
+    struct sensor {
+        var type = String()
+        var values = [valueObject]()
+    }
+    var sensors = [sensor]()
     var station = [String]()
     var load = UIVisualEffectView()
     var activityIndicator = UIActivityIndicatorView()
@@ -33,6 +48,8 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     var current_date_link = String()
     var last_date_link = String()
     @IBOutlet weak var backgroundView: BackgroundView!
+    //Declare used storyboard with it's id
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
     //# MARK: - END of variables
 
     
@@ -46,22 +63,32 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //TableView settings
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.allowsSelection = false
+        //End of TableView settings
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        let myFormatter = DateFormatter()
-        let date = Date()
-        let calendar = Calendar.current
-        let past_date = calendar.date(byAdding: .day, value: -7, to: date)
-
         
-        myFormatter.dateFormat = "MM/dd/yyyy"
-        current_date = myFormatter.string(from: date)
-        myFormatter.dateFormat = "yyyyMMdd-HHmmss"
-        current_date_link = myFormatter.string(from: date)
-        myFormatter.dateFormat = "MM/dd/yyyy"
-        last_date = myFormatter.string(from: past_date!)
-        myFormatter.dateFormat = "yyyyMMdd-HHmmss/"
-        last_date_link = myFormatter.string(from: past_date!)
+        
+        if var dateFromtext = UserDefaults.standard.object(forKey: "dateFrom") as? String {
+            dateFromtext = dateFromtext.replacingOccurrences(of: "-", with: "")
+            dateFromtext = dateFromtext.replacingOccurrences(of: ":", with: "-")
+            last_date_link = dateFromtext
+        } else {
+            last_date_link = "20000101-000000"
+        }
+        if var dateTotext = UserDefaults.standard.object(forKey: "dateTo") as? String {
+            dateTotext = dateTotext.replacingOccurrences(of: "-", with: "")
+            dateTotext = dateTotext.replacingOccurrences(of: ":", with: "-")
+            current_date_link = dateTotext
+        } else {
+            current_date_link = "20000101-000000"
+        }
         if let pie_name = UserDefaults.standard.object(forKey: "pie_name") as? [String] {
             sharedData = pie_name
             titleLabel.text = pie_name[0]
@@ -76,15 +103,8 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
             humidityLabel.text = "Error"
             station = ["Error"]
         }
-        
-        //TableView settings
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.allowsSelection = false
-        //End of TableView settings
-        
         //Setup the loading blur view
-        blurEffectView.frame = CGRect(x: 0, y: self.backgroundView.frame.origin.y, width: self.view.frame.size.width, height: self.view.frame.size.height - self.backgroundView.frame.size.height * 2)
+        blurEffectView.frame = CGRect(x: 0, y: self.backgroundView.frame.origin.y, width: self.view.frame.size.width, height: self.view.frame.size.height - self.backgroundView.frame.size.height)
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         blurEffectView.alpha = 1
         load = blurEffectView
@@ -96,16 +116,16 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         activityIndicator.startAnimating()
         //End of the loading view setup
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         activityIndicator.stopAnimating()
         if (station[0] != "Error") {
-            data = get_all_sensors(id: Int(station[4]))
-            for tmp in data {
-                if (tmp.1.count > 10) {
+            sensors = get_all_sensors(id: Int(station[4]))
+            for tmp in sensors {
+                if (tmp.values.count > 10) {
                     var dataEntries : [ChartDataEntry] = []
-                    for i in 0...tmp.1.count - 1 {
-                        let dataEntry = ChartDataEntry(x: Double(i), y: tmp.1[i])
+                    for i in 0...tmp.values.count - 1 {
+                        let dataEntry = ChartDataEntry(x: Double(i), y: tmp.values[i].value)
                         dataEntries.append(dataEntry)
                     }
                     arrayDataEntries.append(dataEntries)
@@ -114,9 +134,10 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
                     arrayDataEntries.append(dataEntries)
                 }
             }
-        } else {
-            data = [("Error", [0.0])]
         }
+//        } else {
+//            data = [("Error", [0.0])]
+//        }
         UIView.animate(withDuration: 0.50, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: [], animations: {
             //Set x position what ever you want
             self.load.alpha = 0
@@ -133,13 +154,23 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         self.dismiss(animated: true, completion: nil)
     }
 
-    func get_sensor_values(type: String, id: Int?) -> [Double] {
+    @IBAction func settings(_ sender: Any) {
+        //Instanciate view controller
+        let settings_vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "DateSettingsViewController") as UIViewController
+        
+        
+        //Present the controller which will dismiss its self later on
+        self.present(settings_vc, animated: true, completion: nil)
+    }
+    
+    func get_sensor_values(type: String, id: Int?) -> [valueObject] {
         var full_url = link_sensor + "0" + "type"
-        var res = [Double]()
+        var res = [valueObject]()
+        var tmpValue = valueObject(value: 0.0, error: true)
         
         
         if let unwraped_id = id{
-            full_url = link_sensor + String(unwraped_id) + "/" + type + "/" + last_date_link + current_date_link
+            full_url = link_sensor + String(unwraped_id) + "/" + type + "/" + last_date_link + "/" + current_date_link
         }
         //Display network inidcator when reaching data base
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -152,12 +183,17 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
                                 for i in 0...parsedData.count - 1 {
                                     if let sensor = parsedData[i] as? NSDictionary {
                                         if let value = sensor["value"] as? String {
-                                            res.append(Double(value)!)
+                                            tmpValue.value = Double(value)!
                                         }
+                                        if let date = sensor["datetime"] as? String {
+                                            tmpValue.date = date
+                                        }
+                                        tmpValue.error = false
+                                        res.append(tmpValue)
                                     }
                                 }
                             } else {
-                                res = [0.0]
+                                res.append(valueObject(value: 0.0, error: true))
                             }
                         } else {
                             print("Error : invalid response.")
@@ -180,23 +216,25 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         }
         else {
-            res = [0.0]
+            res.append(valueObject(value: 0.0, error: true))
             print("Error : the url was broken.")
         }
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         return (res)
     }
     
-    func get_all_sensors(id : Int?) -> [(String, [Double])] {
-        var sensors = [(String, [Double])]()
-        
+    func get_all_sensors(id : Int?) -> [sensor] {
+        var tmpSensors = [sensor]()
+    
         
         for i in 0...type.count - 1 {
-            var sensor = [0.0]
-            sensor = get_sensor_values(type: type[i], id: id)
-            sensors.append((type[i], sensor))
+            var tmpSensor = sensor()
+            tmpSensor.values = get_sensor_values(type: type[i], id: id)
+            tmpSensor.type = type[i]
+            tmpSensors.append(tmpSensor)
+            print(tmpSensor)
         }
-        return (sensors)
+        return (tmpSensors)
     }
     
     
@@ -205,18 +243,37 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //# MARK: - Table settings
     //Filling the table view with content from the app and the data base
+    func formatDate(date: String) -> [Character] {
+        var res = [Character]()
+        var i = 0
+        
+        
+        while (date[i] != "T") {
+            res.append(date[i])
+            i += 1
+        }
+        return (res)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var charDataSet = LineChartDataSet()
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdendifier)! as! GraphCell
         
-        
-        cell.loadTextLabel(type: self.sensor_types[indexPath.row], dateFrom: last_date, dateTo: current_date)
-        if data[indexPath.row].1.count > 10 {
+
+        cell.typeLabel.text = self.sensor_types[indexPath.row]
+        print(sensors[3])
+        if sensors[indexPath.row].values.count > 10 && sensors[indexPath.row].values[0].error != true {
+            cell.dateLeftLabel.text = String(formatDate(date: sensors[indexPath.row].values[0].date))
+            cell.dateRightLabel.text = String(formatDate(date: sensors[indexPath.row].values[sensors[indexPath.row].values.count - 1].date))
             charDataSet = LineChartDataSet(values: arrayDataEntries[indexPath.row], label: self.type[indexPath.row])
             let chartData: LineChartData?
             charDataSet.circleRadius = 0.5
             chartData = LineChartData(dataSet: charDataSet)
             cell.lineChartView.data = chartData
+        } else {
+            cell.lineChartView.data = nil
+            cell.dateLeftLabel.text = ""
+            cell.dateRightLabel.text = ""
         }
         cell.lineChartView?.chartDescription = nil
         cell.lineChartView?.xAxis.labelPosition = .bottom
@@ -235,7 +292,7 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     
     //Function that counts the number of cells to be displayed
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return sensors.count
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
