@@ -22,6 +22,7 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     let type = ["temperature", "pressure", "hygrometry", "snow"]
     let sensor_types = ["Temperature", "Pressure", "Hygrometry", "Snow"]
     let link_sensor = "http://tech-toulouse.ovh:8000/sensor/"
+    let cellReuseIdendifier = "graphCell"
     var data = [(String, [Double])]()
     var arrayDataEntries = [[ChartDataEntry]]()
     var station = [String]()
@@ -31,7 +32,6 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     var last_date = String()
     var current_date_link = String()
     var last_date_link = String()
-    var cache:NSCache<AnyObject, AnyObject>!
     @IBOutlet weak var backgroundView: BackgroundView!
     //# MARK: - END of variables
 
@@ -54,7 +54,6 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         let past_date = calendar.date(byAdding: .day, value: -7, to: date)
 
         
-        self.cache = NSCache()
         myFormatter.dateFormat = "MM/dd/yyyy"
         current_date = myFormatter.string(from: date)
         myFormatter.dateFormat = "yyyyMMdd-HHmmss"
@@ -191,6 +190,7 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     func get_all_sensors(id : Int?) -> [(String, [Double])] {
         var sensors = [(String, [Double])]()
         
+        
         for i in 0...type.count - 1 {
             var sensor = [0.0]
             sensor = get_sensor_values(type: type[i], id: id)
@@ -206,33 +206,25 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     //# MARK: - Table settings
     //Filling the table view with content from the app and the data base
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellId: String = "graphCell"
-        let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellId)! as UITableViewCell
-        //Content views identified by tags to fill table view with proper content at the right place
-        let nameLabel = cell.contentView.viewWithTag(1) as! UILabel
-        nameLabel.text = "\(self.sensor_types[indexPath.row])"
-        let last = cell.contentView.viewWithTag(5) as! UILabel
-        last.text = last_date
-        let current = cell.contentView.viewWithTag(6) as! UILabel
-        current.text = current_date
-        let lineChart = cell.contentView.viewWithTag(3) as! LineChartView
         var charDataSet = LineChartDataSet()
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdendifier)! as! GraphCell
+        
+        
+        cell.loadTextLabel(type: self.sensor_types[indexPath.row], dateFrom: last_date, dateTo: current_date)
         if data[indexPath.row].1.count > 10 {
             charDataSet = LineChartDataSet(values: arrayDataEntries[indexPath.row], label: self.type[indexPath.row])
             let chartData: LineChartData?
             charDataSet.circleRadius = 0.5
             chartData = LineChartData(dataSet: charDataSet)
-            lineChart.data = chartData
+            cell.lineChartView.data = chartData
         }
-        
-        lineChart.chartDescription = nil
-        lineChart.xAxis.labelPosition = .bottom
-        lineChart.rightAxis.enabled = false
-        lineChart.leftAxis.enabled = true
-        lineChart.xAxis.drawGridLinesEnabled = false
-        lineChart.xAxis.enabled = false
-        lineChart.legend.enabled = false
+        cell.lineChartView?.chartDescription = nil
+        cell.lineChartView?.xAxis.labelPosition = .bottom
+        cell.lineChartView?.rightAxis.enabled = false
+        cell.lineChartView?.leftAxis.enabled = true
+        cell.lineChartView?.xAxis.drawGridLinesEnabled = false
+        cell.lineChartView?.xAxis.enabled = false
+        cell.lineChartView?.legend.enabled = false
         return cell
     }
 
@@ -253,26 +245,22 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     //Animates table when view appears and when reloading table data.
     func animateTable(){
         tableView.reloadData()
-        
         let cells = tableView.visibleCells
         let tableHeight: CGFloat = tableView.frame.size.height
+        var index = 0
+        
         
         for i in cells {
             let cell: UITableViewCell = i as UITableViewCell
             cell.transform = CGAffineTransform(translationX: 0, y: tableHeight)
         }
-        
-        var index = 0
-        
         for a in cells {
             let cell: UITableViewCell = a as UITableViewCell
             UIView.animate(withDuration: 1.5, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
                 cell.transform = CGAffineTransform(translationX: 0, y: 0);
             }, completion: nil)
-            
             index += 1
         }
-        
     }
     //# MARK: - END of table settings
 }

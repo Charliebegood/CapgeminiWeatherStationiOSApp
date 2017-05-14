@@ -18,6 +18,7 @@
 		569A4C9A1E94DC8B001C8069 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB86987C1E57893E006274E9 /* Charts.framework */; };
 		569A4C9B1E94DC8B001C8069 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB86987C1E57893E006274E9 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		569A4CA01E94EB0C001C8069 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 569A4C9F1E94EB0C001C8069 /* launch.png */; };
+		56AE18251EC795C700D09060 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE18241EC795C700D09060 /* GraphCell.swift */; };
 		56BC1C1A1E840CD900561AFE /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 56BC1C191E840CD900561AFE /* refresh.png */; };
 		56BC1C1D1E84166F00561AFE /* UIViewRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC1C1C1E84166F00561AFE /* UIViewRotation.swift */; };
 		56BC1C1F1E8418D100561AFE /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC1C1E1E8418D100561AFE /* Timer.swift */; };
@@ -115,10 +116,11 @@
 		567DD60C1E6182C500F671D0 /* icon20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon20.png; path = Fichiers/icon20.png; sourceTree = "<group>"; };
 		567DD6101E61851700F671D0 /* icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon29.png; path = Fichiers/icon29.png; sourceTree = "<group>"; };
 		569A4C9F1E94EB0C001C8069 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch.png; path = Fichiers/launch.png; sourceTree = SOURCE_ROOT; };
+		56AE18241EC795C700D09060 /* GraphCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GraphCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		56BC1C191E840CD900561AFE /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = refresh.png; path = Fichiers/refresh.png; sourceTree = "<group>"; };
 		56BC1C1C1E84166F00561AFE /* UIViewRotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewRotation.swift; sourceTree = "<group>"; };
 		56BC1C1E1E8418D100561AFE /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		56EF0CED1E55EF5200ADFF06 /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		56EF0CED1E55EF5200ADFF06 /* DisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DisplayViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		56EF0CF11E55F91200ADFF06 /* suggestion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suggestion.png; path = Fichiers/suggestion.png; sourceTree = SOURCE_ROOT; };
 		56EF0CF51E55F94200ADFF06 /* temperature.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = temperature.png; path = Fichiers/temperature.png; sourceTree = "<group>"; };
 		56EF0CF61E55F94200ADFF06 /* information.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = information.png; path = Fichiers/information.png; sourceTree = "<group>"; };
@@ -206,6 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				CBCD621B1E4F6B1800C55D7D /* Annotation.swift */,
+				56AE18241EC795C700D09060 /* GraphCell.swift */,
+				56F435671E4B696000E4D7F8 /* CustomBackground.swift */,
 				56BC1C1C1E84166F00561AFE /* UIViewRotation.swift */,
 				56BC1C1E1E8418D100561AFE /* Timer.swift */,
 			);
@@ -243,7 +247,6 @@
 				56F435381E4B5E1800E4D7F8 /* MainViewController.swift */,
 				CB86E33A1E50F45E004A2983 /* Transitions */,
 				56BC1C1B1E84164F00561AFE /* Custom Views */,
-				56F435671E4B696000E4D7F8 /* CustomBackground.swift */,
 				56F435761E4B8B6100E4D7F8 /* AboutViewController.swift */,
 				56F4353A1E4B5E1800E4D7F8 /* Main.storyboard */,
 				56F4357C1E4CCC2E00E4D7F8 /* refreshCustom.xib */,
@@ -529,6 +532,7 @@
 				56F435391E4B5E1800E4D7F8 /* MainViewController.swift in Sources */,
 				56BC1C1F1E8418D100561AFE /* Timer.swift in Sources */,
 				CBCD621C1E4F6B1800C55D7D /* Annotation.swift in Sources */,
+				56AE18251EC795C700D09060 /* GraphCell.swift in Sources */,
 				56F435371E4B5E1800E4D7F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
