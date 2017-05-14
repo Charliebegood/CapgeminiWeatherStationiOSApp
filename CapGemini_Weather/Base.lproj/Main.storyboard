@@ -188,6 +188,52 @@
             </objects>
             <point key="canvasLocation" x="31.199999999999999" y="-673.31334332833592"/>
         </scene>
+        <!--Date Settings View Controller-->
+        <scene sceneID="zZm-F4-rkp">
+            <objects>
+                <viewController storyboardIdentifier="DateSettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vFd-Bs-oLX" customClass="DateSettingsViewController" customModule="CapGemini_Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uRH-gN-qyf"/>
+                        <viewControllerLayoutGuide type="bottom" id="eZn-zf-rUZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZwI-ju-pd8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5N-Wu-Y9j">
+                                <rect key="frame" x="111.5" y="25" width="152.5" height="34.5"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24S-GU-Joo">
+                                <rect key="frame" x="8" y="29" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="MNe-Rl-ve2"/>
+                                    <constraint firstAttribute="height" constant="30" id="dRt-le-mRj"/>
+                                </constraints>
+                                <state key="normal" image="StopIcon.png"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="vFd-Bs-oLX" eventType="touchUpInside" id="sbm-za-K1A"/>
+                                    <action selector="return_home:" destination="U7q-EI-StH" eventType="touchUpInside" id="xBa-ew-l5b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.071242146189999994" green="0.1015233472" blue="0.30152258279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i5N-Wu-Y9j" firstAttribute="top" secondItem="uRH-gN-qyf" secondAttribute="bottom" constant="5" id="E6j-tE-N9R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i5N-Wu-Y9j" secondAttribute="trailing" constant="95" id="OqE-Ij-5rD"/>
+                            <constraint firstItem="i5N-Wu-Y9j" firstAttribute="centerX" secondItem="ZwI-ju-pd8" secondAttribute="centerX" id="emd-VT-jfG"/>
+                            <constraint firstItem="24S-GU-Joo" firstAttribute="leading" secondItem="ZwI-ju-pd8" secondAttribute="leading" constant="8" id="kzo-Uw-MeU"/>
+                            <constraint firstItem="i5N-Wu-Y9j" firstAttribute="leading" secondItem="24S-GU-Joo" secondAttribute="trailing" constant="73.5" id="tdy-HJ-glT"/>
+                            <constraint firstItem="24S-GU-Joo" firstAttribute="top" secondItem="uRH-gN-qyf" secondAttribute="bottom" constant="9" id="ucj-z0-dbL"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDF-zJ-Zyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="774" y="-673"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -284,7 +330,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zfe-Vp-4Cs">
-                                <rect key="frame" x="16" y="29" width="30" height="30"/>
+                                <rect key="frame" x="8" y="29" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Vsj-Td-xir"/>
                                     <constraint firstAttribute="width" constant="30" id="jZV-8g-qgt"/>
@@ -442,6 +488,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yps-f1-3gI">
+                                <rect key="frame" x="335" y="29" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="7Mq-PY-yFs"/>
+                                    <constraint firstAttribute="height" constant="30" id="XFW-Vx-5UK"/>
+                                </constraints>
+                                <state key="normal" image="SettingIcon.png"/>
+                                <connections>
+                                    <action selector="settings:" destination="4Yg-ta-Wsp" eventType="touchUpInside" id="wjE-z0-Tih"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.058823529409999999" green="0.070588235289999995" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -450,17 +507,21 @@
                             <constraint firstItem="WxO-7s-4FR" firstAttribute="top" secondItem="1ny-BY-h2r" secondAttribute="bottom" id="BdG-NF-KiR"/>
                             <constraint firstItem="1ny-BY-h2r" firstAttribute="leading" secondItem="mw4-5c-EiQ" secondAttribute="leading" id="ExI-CL-lW7"/>
                             <constraint firstItem="7jP-DQ-zVe" firstAttribute="centerX" secondItem="mw4-5c-EiQ" secondAttribute="centerX" id="EyC-H4-DdW"/>
+                            <constraint firstItem="yps-f1-3gI" firstAttribute="leading" secondItem="7jP-DQ-zVe" secondAttribute="trailing" constant="7" id="I5M-ZR-vVT"/>
                             <constraint firstItem="tct-2A-0qI" firstAttribute="bottom" secondItem="GJS-IE-JCH" secondAttribute="bottom" id="P7O-aU-rPV"/>
-                            <constraint firstItem="zfe-Vp-4Cs" firstAttribute="leading" secondItem="mw4-5c-EiQ" secondAttribute="leadingMargin" id="PMy-r8-7Tr"/>
+                            <constraint firstItem="zfe-Vp-4Cs" firstAttribute="leading" secondItem="mw4-5c-EiQ" secondAttribute="leadingMargin" constant="-8" id="PMy-r8-7Tr"/>
                             <constraint firstItem="WxO-7s-4FR" firstAttribute="top" secondItem="1ny-BY-h2r" secondAttribute="bottom" id="Rwa-W5-EaI"/>
                             <constraint firstItem="tct-2A-0qI" firstAttribute="leading" secondItem="GJS-IE-JCH" secondAttribute="leading" id="SDR-JT-fPO"/>
                             <constraint firstItem="tct-2A-0qI" firstAttribute="leading" secondItem="1ny-BY-h2r" secondAttribute="leading" id="VrD-vT-ZYj"/>
+                            <constraint firstItem="yps-f1-3gI" firstAttribute="top" secondItem="BKG-F4-DyT" secondAttribute="bottom" constant="9" id="W3Q-TF-gpY"/>
                             <constraint firstItem="1ny-BY-h2r" firstAttribute="top" secondItem="GJS-IE-JCH" secondAttribute="top" id="Zz2-Lt-6sJ"/>
                             <constraint firstItem="tct-2A-0qI" firstAttribute="trailing" secondItem="GJS-IE-JCH" secondAttribute="trailing" id="bur-co-q17"/>
                             <constraint firstAttribute="trailing" secondItem="1ny-BY-h2r" secondAttribute="trailing" id="cYd-oZ-2Xl"/>
                             <constraint firstItem="zfe-Vp-4Cs" firstAttribute="top" secondItem="BKG-F4-DyT" secondAttribute="bottom" constant="9" id="cnA-so-L9J"/>
                             <constraint firstItem="1ny-BY-h2r" firstAttribute="top" secondItem="7jP-DQ-zVe" secondAttribute="bottom" constant="69" id="dgx-PE-4b2"/>
                             <constraint firstItem="7jP-DQ-zVe" firstAttribute="top" secondItem="BKG-F4-DyT" secondAttribute="bottom" constant="6" id="gRV-OI-PeZ"/>
+                            <constraint firstAttribute="trailing" secondItem="yps-f1-3gI" secondAttribute="trailing" constant="10" id="lIC-RR-BrV"/>
+                            <constraint firstItem="yps-f1-3gI" firstAttribute="top" secondItem="zfe-Vp-4Cs" secondAttribute="top" id="p7f-IK-00w"/>
                         </constraints>
                     </view>
                     <connections>
@@ -479,6 +540,7 @@
     </scenes>
     <resources>
         <image name="HelpIcon.png" width="100" height="100"/>
+        <image name="SettingIcon.png" width="100" height="100"/>
         <image name="StopIcon.png" width="100" height="100"/>
         <image name="bugreport.png" width="50" height="50"/>
         <image name="center.png" width="100" height="100"/>

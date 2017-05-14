@@ -45,6 +45,8 @@
 		CB86E33C1E50F91A004A2983 /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86E33B1E50F91A004A2983 /* CircularTransition.swift */; };
 		CBA472121EC89AC700264C7C /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB86987C1E57893E006274E9 /* Charts.framework */; };
 		CBA472131EC89AC700264C7C /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB86987C1E57893E006274E9 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBA472181EC8A32C00264C7C /* DateSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA472171EC8A32C00264C7C /* DateSettingsViewController.swift */; };
+		CBA4721A1EC8A77300264C7C /* SettingIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA472191EC8A77300264C7C /* SettingIcon.png */; };
 		CBC1294F1E4B9C1800FC0C56 /* HelpIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC129471E4B9C1800FC0C56 /* HelpIcon.png */; };
 		CBC129501E4B9C1800FC0C56 /* icon58.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC129481E4B9C1800FC0C56 /* icon58.png */; };
 		CBC129511E4B9C1800FC0C56 /* icon80.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC129491E4B9C1800FC0C56 /* icon80.png */; };
@@ -149,6 +151,8 @@
 		CB8698751E57893E006274E9 /* charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = charts.xcodeproj; sourceTree = SOURCE_ROOT; };
 		CB86E3341E50C619004A2983 /* center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = center.png; path = Fichiers/center.png; sourceTree = "<group>"; };
 		CB86E33B1E50F91A004A2983 /* CircularTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		CBA472171EC8A32C00264C7C /* DateSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSettingsViewController.swift; sourceTree = "<group>"; };
+		CBA472191EC8A77300264C7C /* SettingIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SettingIcon.png; path = Fichiers/SettingIcon.png; sourceTree = "<group>"; };
 		CBC129471E4B9C1800FC0C56 /* HelpIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HelpIcon.png; path = Fichiers/HelpIcon.png; sourceTree = "<group>"; };
 		CBC129481E4B9C1800FC0C56 /* icon58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon58.png; path = Fichiers/icon58.png; sourceTree = "<group>"; };
 		CBC129491E4B9C1800FC0C56 /* icon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon80.png; path = Fichiers/icon80.png; sourceTree = "<group>"; };
@@ -253,12 +257,13 @@
 			children = (
 				CB8698751E57893E006274E9 /* charts.xcodeproj */,
 				56F435361E4B5E1800E4D7F8 /* AppDelegate.swift */,
-				56EF0CED1E55EF5200ADFF06 /* DisplayViewController.swift */,
 				56F435381E4B5E1800E4D7F8 /* MainViewController.swift */,
+				56EF0CED1E55EF5200ADFF06 /* DisplayViewController.swift */,
+				CBA472171EC8A32C00264C7C /* DateSettingsViewController.swift */,
+				56F435761E4B8B6100E4D7F8 /* AboutViewController.swift */,
 				565600631EC8835C00D60FEB /* Extensions */,
 				CB86E33A1E50F45E004A2983 /* Transitions */,
 				56BC1C1B1E84164F00561AFE /* Custom Views */,
-				56F435761E4B8B6100E4D7F8 /* AboutViewController.swift */,
 				56F4353A1E4B5E1800E4D7F8 /* Main.storyboard */,
 				56F4357C1E4CCC2E00E4D7F8 /* refreshCustom.xib */,
 				56F435401E4B5E1800E4D7F8 /* Assets.xcassets */,
@@ -341,6 +346,7 @@
 				56BC1C191E840CD900561AFE /* refresh.png */,
 				CB86E3341E50C619004A2983 /* center.png */,
 				564C624F1E4F3AA800B62548 /* pressure.png */,
+				CBA472191EC8A77300264C7C /* SettingIcon.png */,
 				CBC129471E4B9C1800FC0C56 /* HelpIcon.png */,
 				CBC1294E1E4B9C1800FC0C56 /* StopIcon.png */,
 			);
@@ -483,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56EF0CF91E55F94200ADFF06 /* information.png in Resources */,
+				CBA4721A1EC8A77300264C7C /* SettingIcon.png in Resources */,
 				567DD60D1E6182C500F671D0 /* icon76.png in Resources */,
 				56F4357D1E4CCC2E00E4D7F8 /* refreshCustom.xib in Resources */,
 				CBC129521E4B9C1800FC0C56 /* icon87.png in Resources */,
@@ -535,6 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA472181EC8A32C00264C7C /* DateSettingsViewController.swift in Sources */,
 				56BC1C1D1E84166F00561AFE /* UIViewRotation.swift in Sources */,
 				56F435681E4B696000E4D7F8 /* CustomBackground.swift in Sources */,
 				56F435771E4B8B6100E4D7F8 /* AboutViewController.swift in Sources */,

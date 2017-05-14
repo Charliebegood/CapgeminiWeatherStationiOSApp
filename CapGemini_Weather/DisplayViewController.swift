@@ -48,6 +48,8 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
     var current_date_link = String()
     var last_date_link = String()
     @IBOutlet weak var backgroundView: BackgroundView!
+    //Declare used storyboard with it's id
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
     //# MARK: - END of variables
 
     
@@ -149,6 +151,15 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         self.dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func settings(_ sender: Any) {
+        //Instanciate view controller
+        let settings_vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "DateSettingsViewController") as UIViewController
+        
+        
+        //Present the controller which will dismiss its self later on
+        self.present(settings_vc, animated: true, completion: nil)
+    }
+    
     func get_sensor_values(type: String, id: Int?) -> [valueObject] {
         var full_url = link_sensor + "0" + "type"
         var res = [valueObject]()
