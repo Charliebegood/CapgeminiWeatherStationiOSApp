@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		564C62501E4F3AA800B62548 /* pressure.png in Resources */ = {isa = PBXBuildFile; fileRef = 564C624F1E4F3AA800B62548 /* pressure.png */; };
+		5656005A1EC850F600D60FEB /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB86987C1E57893E006274E9 /* Charts.framework */; };
+		5656005B1EC850F600D60FEB /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB86987C1E57893E006274E9 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		567DD6051E61817D00F671D0 /* icon167.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD6021E61817D00F671D0 /* icon167.png */; };
 		567DD6061E61817D00F671D0 /* icon152.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD6031E61817D00F671D0 /* icon152.png */; };
 		567DD6071E61817D00F671D0 /* icon40.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD6041E61817D00F671D0 /* icon40.png */; };
@@ -15,8 +17,6 @@
 		567DD60E1E6182C500F671D0 /* icon60.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD60B1E6182C500F671D0 /* icon60.png */; };
 		567DD60F1E6182C500F671D0 /* icon20.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD60C1E6182C500F671D0 /* icon20.png */; };
 		567DD6111E61851700F671D0 /* icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = 567DD6101E61851700F671D0 /* icon29.png */; };
-		569A4C9A1E94DC8B001C8069 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB86987C1E57893E006274E9 /* Charts.framework */; };
-		569A4C9B1E94DC8B001C8069 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB86987C1E57893E006274E9 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		569A4CA01E94EB0C001C8069 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 569A4C9F1E94EB0C001C8069 /* launch.png */; };
 		56AE18251EC795C700D09060 /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE18241EC795C700D09060 /* GraphCell.swift */; };
 		56BC1C1A1E840CD900561AFE /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 56BC1C191E840CD900561AFE /* refresh.png */; };
@@ -55,7 +55,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		569A4C9C1E94DC8B001C8069 /* PBXContainerItemProxy */ = {
+		5656005C1EC850F600D60FEB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB8698751E57893E006274E9 /* charts.xcodeproj */;
 			proxyType = 1;
@@ -93,13 +93,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		569A4C9E1E94DC8B001C8069 /* Embed Frameworks */ = {
+		5656005E1EC850F700D60FEB /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				569A4C9B1E94DC8B001C8069 /* Charts.framework in Embed Frameworks */,
+				5656005B1EC850F600D60FEB /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				569A4C9A1E94DC8B001C8069 /* Charts.framework in Frameworks */,
+				5656005A1EC850F600D60FEB /* Charts.framework in Frameworks */,
 				CB84F56F1E4D0386003F6C12 /* Security.framework in Frameworks */,
 				CB84F56E1E4D0380003F6C12 /* QuartzCore.framework in Frameworks */,
 			);
@@ -346,12 +346,12 @@
 				56F4352F1E4B5E1800E4D7F8 /* Sources */,
 				56F435301E4B5E1800E4D7F8 /* Frameworks */,
 				56F435311E4B5E1800E4D7F8 /* Resources */,
-				569A4C9E1E94DC8B001C8069 /* Embed Frameworks */,
+				5656005E1EC850F700D60FEB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				569A4C9D1E94DC8B001C8069 /* PBXTargetDependency */,
+				5656005D1EC850F600D60FEB /* PBXTargetDependency */,
 			);
 			name = CapGemini_Weather;
 			productName = CapGemini_Weather;
@@ -556,10 +556,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		569A4C9D1E94DC8B001C8069 /* PBXTargetDependency */ = {
+		5656005D1EC850F600D60FEB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Charts;
-			targetProxy = 569A4C9C1E94DC8B001C8069 /* PBXContainerItemProxy */;
+			targetProxy = 5656005C1EC850F600D60FEB /* PBXContainerItemProxy */;
 		};
 		56F4354C1E4B5E1900E4D7F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

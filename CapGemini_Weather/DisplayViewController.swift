@@ -210,13 +210,18 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdendifier)! as! GraphCell
         
         
-        cell.loadTextLabel(type: self.sensor_types[indexPath.row], dateFrom: last_date, dateTo: current_date)
+        cell.typeLabel.text = self.sensor_types[indexPath.row]
         if data[indexPath.row].1.count > 10 {
+            cell.dateLeftLabel.text = last_date
+            cell.dateRightLabel.text = current_date
             charDataSet = LineChartDataSet(values: arrayDataEntries[indexPath.row], label: self.type[indexPath.row])
             let chartData: LineChartData?
             charDataSet.circleRadius = 0.5
             chartData = LineChartData(dataSet: charDataSet)
             cell.lineChartView.data = chartData
+        } else {
+            cell.dateLeftLabel.text = ""
+            cell.dateRightLabel.text = ""
         }
         cell.lineChartView?.chartDescription = nil
         cell.lineChartView?.xAxis.labelPosition = .bottom
