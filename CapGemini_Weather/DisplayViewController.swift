@@ -116,7 +116,6 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         activityIndicator.stopAnimating()
         if (station[0] != "Error") {
             sensors = get_all_sensors(id: Int(station[4]))
-            print(sensors)
             for tmp in sensors {
                 if (tmp.values.count > 10) {
                     var dataEntries : [ChartDataEntry] = []
@@ -233,7 +232,8 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         var res = [Character]()
         var i = 0
         
-        while (date[i] != "T" && date[i] != "A") {
+        
+        while (date[i] != "T") {
             res.append(date[i])
             i += 1
         }
@@ -244,12 +244,13 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         var charDataSet = LineChartDataSet()
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdendifier)! as! GraphCell
         
-        
-        cell.dateLeftLabel.text = String(formatDate(date: sensors[indexPath.row].values[0].date))
+
         cell.typeLabel.text = self.sensor_types[indexPath.row]
         if sensors[indexPath.row].values.count > 10 {
-            cell.dateLeftLabel.text = String(formatDate(date: sensors[indexPath.row].values[0].date))
-            cell.dateRightLabel.text = String(formatDate(date: sensors[indexPath.row].values[sensors[indexPath.row].values.count - 1].date))
+            if sensors[indexPath.row].values[0].error != true {
+                cell.dateLeftLabel.text = String(formatDate(date: sensors[indexPath.row].values[0].date))
+                cell.dateRightLabel.text = String(formatDate(date: sensors[indexPath.row].values[sensors[indexPath.row].values.count - 1].date))
+            }
             charDataSet = LineChartDataSet(values: arrayDataEntries[indexPath.row], label: self.type[indexPath.row])
             let chartData: LineChartData?
             charDataSet.circleRadius = 0.5
@@ -259,8 +260,6 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.dateLeftLabel.text = ""
             cell.dateRightLabel.text = ""
         }
-        cell.dateLeftLabel.text = String(formatDate(date: sensors[indexPath.row].values[0].date))
-        cell.dateRightLabel.text = String(formatDate(date: sensors[indexPath.row].values[sensors[indexPath.row].values.count - 1].date))
         cell.lineChartView?.chartDescription = nil
         cell.lineChartView?.xAxis.labelPosition = .bottom
         cell.lineChartView?.rightAxis.enabled = false
