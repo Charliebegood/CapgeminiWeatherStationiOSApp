@@ -232,7 +232,6 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
             tmpSensor.values = get_sensor_values(type: type[i], id: id)
             tmpSensor.type = type[i]
             tmpSensors.append(tmpSensor)
-            print(tmpSensor)
         }
         return (tmpSensors)
     }
@@ -261,7 +260,6 @@ class DisplayViewController: UIViewController, UITableViewDataSource, UITableVie
         
 
         cell.typeLabel.text = self.sensor_types[indexPath.row]
-        print(sensors[3])
         if sensors[indexPath.row].values.count > 10 && sensors[indexPath.row].values[0].error != true {
             cell.dateLeftLabel.text = String(formatDate(date: sensors[indexPath.row].values[0].date))
             cell.dateRightLabel.text = String(formatDate(date: sensors[indexPath.row].values[sensors[indexPath.row].values.count - 1].date))
